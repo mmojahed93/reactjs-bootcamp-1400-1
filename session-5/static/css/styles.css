@@ -1,0 +1,48 @@
+#typo-test {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+    column-count: 2;
+    column-gap: 2.5rem;
+    column-rule: 2px dotted #616161;
+
+    line-height: 1.5;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.heading {
+    margin: 40px 0 0;
+}
+
+.title {
+    font-size: 3.5rem;
+    background-color: grey;
+}
+
+#content {
+    background-color: #4DB6AC;
+}
+
+@media screen and (max-width: 700px) {
+    .title {
+        font-size: 2.5rem;
+        background-color: #1E88E5;
+    }
+
+    #content {
+        background-color: #B0BEC5;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 1.5rem;
+        background-color: orange;
+    }
+
+    #content {
+        background-color: #F8BBD0;
+    }
+}
