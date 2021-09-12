@@ -1,0 +1,30 @@
+.container {
+    background-color: gold;
+    display: grid;
+    height: 100vh;
+    grid-template: repeat(3, 33fr) / repeat(3, 33fr);
+    grid-template-areas: "sidebar header header"
+                         "sidebar gallery gallery"
+                         "sidebar gallery gallery";
+}
+
+.sidebar {
+    background-color: orange;
+    grid-area: sidebar;
+}
+
+.header {
+    background-color: dodgerblue;
+    grid-area: header;
+}
+
+.gallery {
+    background-color: grey;
+    grid-area: gallery;
+}
+
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

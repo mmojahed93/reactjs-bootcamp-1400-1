@@ -1,0 +1,36 @@
+html {
+    font-size: 25px;
+}
+
+.container {
+    border: 1px solid grey;
+    font-size: 30px;
+}
+
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.avatar {
+    width: 5rem;
+    height: 5rem;
+    background-color: orange;
+    float: left;
+    margin: 5px;
+}
+
+.clear-float {
+    clear: both;
+}
+
+
+@media print {
+    .span-test {
+        display: inline-block;
+        background-color: gold;
+        width: 200px
+    }
+}
+

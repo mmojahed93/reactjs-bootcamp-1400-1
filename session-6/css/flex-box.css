@@ -1,0 +1,24 @@
+.container {
+    height: 90vh;
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+    /*align-content: center;*/
+}
+
+.box {
+    width: 10rem;
+    height: 10rem;
+    background-color: orange;
+    margin: 5px;
+    flex-grow: 1;
+}
+
+.box-1 {
+    flex-basis: 20rem;
+    /*align-self: flex-start;*/
+    /*flex-shrink: 1;*/
+}
