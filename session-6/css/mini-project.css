@@ -16,15 +16,29 @@
 .header {
     background-color: dodgerblue;
     grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .gallery {
     background-color: grey;
     grid-area: gallery;
+    display: grid;
+    grid-template: repeat(2, 50fr)/repeat(2, 50fr);
+    align-items: stretch;
+    justify-items: stretch;
 }
 
 .sidebar-items {
     display: flex;
     flex-direction: column;
     padding: 10px;
+}
+
+img {
+    width: 100%;
 }
