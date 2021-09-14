@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+.main-container-15 {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 100fr / repeat(2, 50fr);
+    grid-template-areas: "login-image login-inputs";
+}
+
+.login-image {
+    grid-area: login-image;
+    background: url("../images/black-and-white-working-small.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-inputs {
+    grid-area: login-inputs;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 5rem;
+}
+
+.welcome-title {
+    font-size: 2rem;
+    color: #616161;
+}
+
+.logo-container {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color: #4DB6AC
+}
