@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
 
+    <style>
+        .checkbox-label {
+            margin-right: 1.5rem;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -19,6 +25,31 @@
             <option data-value="3">US</option>
             <option data-value="4">Germany</option>
         </datalist>
+    </div>
+    <div>
+        <label for="languages">Countries</label>
+        <select id="languages">
+            <option data-value="0">Select option...</option>
+            <option data-value="1">Python</option>
+            <option data-value="2" selected>Java</option>
+            <option data-value="3">JavaScript</option>
+            <option data-value="4">C++</option>
+        </select>
+    </div>
+
+    <div>
+        <div>
+            <input id="html" type="checkbox">
+            <label for="html" class="label-inline checkbox-label" >HTML</label>
+        </div>
+        <div>
+            <input id="CSS" type="checkbox">
+            <label for="CSS" class="label-inline checkbox-label">CSS</label>
+        </div>
+        <div>
+            <input id="JS" type="checkbox">
+            <label for="JS" class="label-inline checkbox-label">JS</label>
+        </div>
     </div>
 
     <button class="btn btn-primary" type="submit">Login</button>
