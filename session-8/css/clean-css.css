@@ -1,0 +1,33 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+}
+
+:root {
+    --primary-color: #4DB6AC;
+    --seconday-color: orange;
+    --main-border-radious: 10px;
+    --small-font: 0.8rem;
+    --medium-font: 1rem;
+    --large-font: 1.3rem;
+    --very-large-font: 1.5rem;
+
+}
+
+.btn {
+    padding: 0.5rem 0.8rem;
+    border: 0;
+}
+
+.btn-1 {
+    background-color: var(--primary-color);
+}
+
+.btn-2 {
+    background-color: orange;
+}
+
+.container {
+    font-size: 1.5rem;
+    background-color: #ff7e77;
+}
