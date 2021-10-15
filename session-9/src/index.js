@@ -395,17 +395,25 @@ function calc(prevVal, currentVal) {
 const myArr = [2, 5, 2, 2, 3, 5, 1, 3, 5, 7, 9, 7]
 // const occurrences = {2: 3, 5: 3, 3: 2, 1: 1, 7: 2, 9: 1}
 
-const occurrences = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4].reduce(function (acc, curr) {
-    acc[curr] ? ++acc[curr] : acc[curr] = 1
-    return acc
-//     if(acc[curr]){
-//         ++acc[curr]
-//     }else{
-//         acc[curr] = 1
-//     }
-// return acc
+const findOccurrences = (prev, current) => {
+    prev[current] = (prev[current] || 0) + 1
+    return prev
+    // if (!prev[current]) {
+    //     prev[current] = 1
+    // } else {
+    //     prev[current] = prev[current] + 1
+    // }
+    //
+    // return prev
+}
 
-}, {});
+const getOccurrences = (arr) => {
+
+    return arr.reduce(findOccurrences, {})
+}
+
+
+// console.log(getOccurrences(myArr))
 
 // function test(a, b) {
 //     return a + b, a,b
@@ -413,6 +421,184 @@ const occurrences = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4].reduce(function (acc, curr) {
 //
 // console.log(test(3,5)) // => {2: 5, 4: 1, 5: 3, 9: 1}
 
-for (let item in arr){
-    console.log(item)
+// for (let item in arr) {
+//     console.log(item)
+// }
+
+
+// ##################   Functions  ###################
+// writeMessage0("slm")
+//
+//
+// function writeMessage0(message) {
+//     console.log('logging the message by function declaration...')
+//     console.log('message: %s', message)
+// }
+//
+// const writeMessage1 = function (message) {
+//     console.log('logging the message by function expression...')
+//     console.log('message: %s', message)
+// }
+
+
+// function longestString() {
+//     let longest = '';
+//     for (let i = 0; i < arguments.length; i++) {
+//         if (arguments[i].length > longest.length) {
+//             longest = arguments[i];
+//         }
+//     }
+//     return longest;
+// }
+//
+// console.log(longestString('a', 'ab', 'acv', 'svosnv','asc'))
+
+// function logFun(a, b, ...args) {
+//     console.log("a", a)
+//     console.log("b", b)
+//     console.log(typeof args)
+//     console.log("more args", args)
+// }
+// logFun("one", "two", "three", "four", "ﬁve", "six")
+
+
+function multiply(a, b, c = 1, d = 5) {
+    // or b = b || 1
+    return a * b * c * d;
 }
+
+// console.log(multiply(5, 2)); // expected output: 10
+// console.log(multiply(5)); // expected output: 5
+// console.log(multiply(5, undefined)); // expected output: 5
+
+// console.log(multiply(2, 3))
+
+// 5! = 5 * 4 * 3 * 2 * 1
+// 5! = 5 * 4!
+// 5! = 5 * 4 * 3!
+
+
+// function factorial(x) {
+//     if (x === 0) {
+//         return 1;
+//     }
+//     return x * factorial(x - 1);
+// }
+//
+//
+
+function rev(str) {
+    if (str.length === 0) {
+        return ''
+    }
+
+    return str[str.length - 1] + rev(str.substring(0, str.length - 1))
+}
+
+
+// let userInput = '';
+// const readline = require('readline').createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// })
+//
+// function getInput() {
+//     readline.question(`Type your input: (enter 'exist' to finish): `, input => {
+//         userInput = input;
+//         console.log(`Your input: ${input}`)
+//
+//         if (userInput.toLowerCase() === 'exit') {
+//             readline.close()
+//         } else {
+//             getInput()
+//         }
+//     })
+// }
+
+// getInput()
+
+
+const printNumbers = (input) => {
+    if (!input && input !== 0) {
+        return ''
+    }
+    input = input.toString()
+    let arrInput = input.split(''); // arrInput = [5, 1, 3, 6]
+
+    let result = '';
+    arrInput.map(num => {
+        result += `${num}: `
+        for (let i = 0; i < num; i++) {
+            result += num;
+        }
+        result += '\n'
+    })
+
+    return result;
+}
+
+// console.log(printNumbers('5136'))
+
+function printSign(n, sign = '*') {
+    let res = ''
+    for (let i = 0; i < n; i++) {
+        if (i === 0 || i === n - 1) {
+            res += sign.repeat(n) + '\n'
+        } else {
+            res += sign + ' '.repeat(n - 2) + sign + '\n'
+        }
+    }
+    return res
+}
+
+// console.log(printSign(5, '#'))
+
+const excludeArray = (arr, excluded) => {
+    // const result = arr.map(item => {
+    //     if (!excluded.includes(item)) {
+    //         return item
+    //     }
+    // })
+    // return result.filter((item) => item !== undefined)
+
+    // return arr.filter((item) => excluded.indexOf(item) === -1)
+    // return arr.filter((item) => !excluded.some(item2 => item2 === item))
+    // return arr.filter((item) => excluded.every(item2 => item2 !== item))
+}
+
+// console.log(excludeArray([0, 1, 2, 3, 4], [2, 3]))
+
+
+const sample = [0, 1, 2, 3, 4] // index: 1, offset: -1, [2, 1, 3, 4]
+console.log(sample.filter(Number.isInteger))
+
+function move(arr, index, offset) {
+    if (!arr) {
+        console.error("Invalid array")
+        return
+    }
+    const newIndex = index + offset;
+    if (newIndex < 0 || newIndex >= arr.length) {
+        console.error("New index out of range")
+        return
+    }
+    arr[newIndex] = arr.splice(index, 1)[0]
+    return arr
+}
+
+console.log(move([0, 1, 2, 3, 4], 1, 3))
+
+
+const removeAdjacentDuplicates = (str) => {
+    let res = ''
+    let lastChar = ''
+    for (let char of str) {
+        if (lastChar !== char) {
+            res += char
+            lastChar = char
+        }
+    }
+    return res;
+}
+
+console.log(removeAdjacentDuplicates("aaabcdddeewwew"))
