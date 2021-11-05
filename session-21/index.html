@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+    </script>
+</head>
+
+
+<body>
+
+<div id="container1">
+    First div
+
+
+    <p class="pContent1">First P element</p>
+
+
+
+    <h2 class="h2Content1">First h2 element</h2>
+    <div class="container2">
+        <p class="pContent note">Second p element</p>
+        <h3 class="h3Content1">First h3 element</h3>
+        <p class="pContent comment">Third p element</p>
+    </div>
+    <p class="pContent">4th p element</p>
+
+    <p class="mouseEvent" onmouseenter="onMouseEntered(this)" onmouseout="onMouseOut(this)">Come here!</p>
+
+    <p id="commentText">Input text</p>
+    <input id="comment" oninput="onTyping(this)">
+</div>
+
+<script>
+    // const mainContainer = document.getElementById("container1");
+    // mainContainer.style.background = 'red'
+    // mainContainer.innerHTML = "<h1>Slm be hame</h1>"
+
+    const firstPElement = document.getElementsByClassName('pContent1')[0];
+    // firstPElement.style.cssText = "border: 1px solid red; border-radius: 4px; padding: 5px"
+    firstPElement.setAttribute("style", "border: 1px solid red; border-radius: 4px; padding: 5px")
+    firstPElement.onclick = () => {
+        firstPElement.textContent = "Clicked 1"
+        firstPElement.style.background = "blue"
+    }
+
+    const commentView = document.getElementById("commentText")
+    const onTyping = (element) => {
+        commentView.textContent = element.value;
+    }
+
+
+    function onMouseEntered(element) {
+        element.textContent = "Your are entered! :)"
+        element.style.background = 'green'
+    }
+    function onMouseOut(element) {
+        element.textContent = "Your are exited! :("
+        element.style.background = 'red'
+    }
+
+    // function onPElementClicked0(element) {
+    //     console.log("onPElementClicked0")
+    //     element.textContent = "Clicked 0"
+    //     element.style.background = "red"
+    // }
+
+    // const pElementsByClass = document.getElementsByClassName("pContent")
+    // const pElements = document.getElementsByTagName("p")
+    // const divElements = document.getElementsByTagName("div")
+    // console.log(`Count of p tags: ${pElements.length}`)
+    // console.log(`Count of div tags: ${divElements.length}`)
+
+    // const querySelection = document.querySelectorAll(".pContent")
+    // console.log(querySelection.length)
+    // for (let i = 0; i < querySelection.length; i++) {
+    //     // querySelection[i].innerHTML = `<p>${i}th element</p>`
+    //     console.log(querySelection[i])
+    //     querySelection[i].style.background = 'red'
+    // }
+</script>
+
+</body>
+</html>

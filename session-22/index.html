@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--    <script rel="script" src="src/index.js"></script>-->
+</head>
+
+<body>
+
+<div id="container" style="background: lightblue">
+
+    <p class="firstP" style="background: lightgreen;width:100px">First P element</p>
+    <p class="secondP">Second P element</p>
+</div>
+
+<a target="googleWindow"></a>
+
+<p id="windowController">
+
+</p>
+
+<button onclick="openGoogle()">Open google</button>
+
+<script>
+
+    const container = document.getElementById("container")
+    container.addEventListener("click", onContainerClick)
+
+    function onContainerClick(element) {
+        console.log("Container clicked")
+    }
+
+    const firstP = document.getElementsByClassName('firstP')[0]
+    const changeContent = () => {
+        console.log("First p clicked")
+        firstP.textContent = "Content is changed!"
+    }
+    firstP.addEventListener('click', changeContent, true)
+    firstP.removeEventListener('click', changeContent, true)
+
+    const newPElement = document.createElement("p")
+    // const pElementContent = document.createTextNode("New p element")
+    // newPElement.append(pElementContent)
+    // newPElement.textContent = "New p element"
+    newPElement.innerHTML = "New p element"
+
+    container.insertBefore(newPElement, firstP)
+
+    const windowController = document.getElementById("windowController")
+    window.onresize = () => {
+        windowController.textContent = `width: ${window.innerWidth} height: ${window.innerHeight}`
+    }
+
+    function openGoogle() {
+        // console.log(location)
+        window.open("https://google.com",'googleWindow')
+    }
+
+    // firstP.remove()
+    // container.removeChild(firstP)
+
+
+</script>
+
+</body>
+
+</html>

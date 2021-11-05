@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #parent1 {
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="parent1">
+    Inside div1 element
+    <h3 id="first-h3">First h3 element</h3>
+    <p class="paragraph">First p element</p>
+    <h2 id="first-h2">First h2 element</h2>
+    <div class="parent2">
+        Inside div3 tag
+        <p class="note paragraph">Second p element</p>
+        <h3 class="second-h3">Second h3 element</h3>
+    </div>
+    <p class="footer paragraph">Third p element</p>
+
+</div>
+
+<div>
+    Events
+    <p onclick='this.innerHTML="Clicked!"'>Click Me</p>
+    <p onmouseout="onMouseOut(this)" onmouseenter="onMouseEnter(this)">Come here</p>
+    <button id="okBtn">OK</button>
+
+    <h2 id="comment"></h2>
+    <input type="text" id="commentInput" oninput="setComment(this)">
+
+</div>
+
+<script>
+
+    function onMouseEnter(ele) {
+        ele.textContent = "Enter"
+    }
+
+    function onMouseOut(ele) {
+        ele.textContent = "Out"
+    }
+
+    // const test = document.getElementsByClassName('paragraph')
+    // test[0].textContent = 'slm'
+    // test[0].style.background = 'red'
+
+    const parent1 = document.getElementById('parent1')
+    element.addEventListener("click", function (){element.style.background="#74edcd"})
+
+    // parent1.style.background = 'red';
+    // parent1.style.cssText = 'border: 1px solid #000; background: #ddaadd';
+    parent1.setAttribute("style", 'border: 1px solid #000; background: #ddaadd')
+    parent1.style.fontWeight = 'bold';
+
+    // const mainParentPElements = parent1.getElementsByTagName("p")
+    // const mainParentPElements = parent1.getElementsByClassName("note")
+    // for (let i = 0; i < mainParentPElements.length; i++) {
+    //     mainParentPElements[i].textContent = "ttt"
+    // }
+
+    onClick = (obj) => {
+        obj.style.background = "red"
+    }
+
+    document.getElementById("okBtn").onclick = () => {
+        document.getElementById("okBtn").style.color = 'red'
+        // console.log("slm")
+    }
+
+    setComment = (ele) => {
+        document.getElementById("comment").textContent = ele.value
+    }
+
+</script>
+</body>
+</html>

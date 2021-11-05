@@ -1,0 +1,35 @@
+.card {
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.42);
+    border-radius: 5px;
+    margin: 50px 20px;
+    padding-bottom: 20px;
+}
+.photo {
+    width: 100%;
+    /*border-top-left-radius: 5px;*/
+    /*border-top-right-radius: 5px;*/
+}
+
+#input {
+    width: 500px;
+    height:50px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+.title {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 30px;
+    color: cadetblue;
+}
+.dec {
+    margin-left: 30px;
+    font-size: 20px;
+    color: darkslateblue;
+}
+.btn {
+    margin-left: 30%;
+    margin-top: 10px;
+}
